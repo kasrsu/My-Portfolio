@@ -1,6 +1,8 @@
+'use client';
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react';
+import React, { createContext ,useState, useEffect } from 'react';
 import { Application } from '@splinetool/runtime';
+import {delay, motion, useAnimation, useInView } from 'framer-motion';
 
 
 // const ArrayDisplay: React.FC = () => {
@@ -28,13 +30,21 @@ import { Application } from '@splinetool/runtime';
       
         <section className='hero-section w-screen col-span-5 h-screen flex flex-row align-middle content-center items-center justify-center p-10 '>
           <div className=' justify-center col-span-4 w-1/2'>
-            <h1 className=' text-2xl text-white col-span-2 font-bold'>
+            <motion.h1
+             variants={{
+              hidden:{opacity:0 , y:50},
+              vissible:{opacity:1 , y:0}
+             }}
+             initial ='hidden'
+             animate='vissible'
+             transition={{duration:0.5, delay:0}}
+             className=' text-2xl text-white col-span-2 font-bold'>
               I'm Anusara Sri Ravindih
-            </h1>
+            </motion.h1>
             <h1 className=' text-4xl  opacity-90 font-black'>
             Graphic Designer
             </h1>
-            <p className=''>
+            <p className=' pt-10'>
               I'm a graphic designer based in Bangkok, Thailand. I have a passion for creating clean, modern identities, stylish & beautiful websites, and eye-catching print design.
             </p>
           </div>
@@ -43,37 +53,41 @@ import { Application } from '@splinetool/runtime';
           </div>
         </section>
 
-        <section className=' col-span-5  flex h-screen'>
-
-          <div className='my_details cols-span-3 '>
-            <div>
+        <section className='col-span-5 p-10 gap-5 flex h-screen'>
+          <div className='grid grid-cols-5 gap-3'>
+          <div className='my_details col-span-2 '>
+            <div className=' bg-pink-800 rounded-2xl relative'>
               <h1 className=' text-center text-2xl font-extrabold p-10 text-white'>
                 About Me
               </h1>
               <p className=' justify-center text-center'>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, saepe aut, ullam ea ad neque consequuntur dolorem aliquid temporibus obcaecati natus, asperiores molestiae ratione nisi accusamus veniam atque hic accusantium.
+                Lorem ipsum, jsdlkjfklsdjklf jkldsjfkljdskljfkl jkld kdjfksf kdlsjfksldfjksljfkdsjfklsjdkfjdklsjfkldsfjkjskldfjkdklsjfksdjdolor sit amet consectetur adipisicing elit. Harum, saepe aut, ullam ea ad neque consequuntur dolorem aliquid temporibus obcaecati natus, asperiores molestiae ratione nisi accusamus veniam atque hic accusantium.
               </p>
             </div>
 
           </div>
-          <div className='skills col-span-2 p-10'>
+          <div className='positions col-span-3 h-5/6 relative '>
 
-            <div className=' skills col-span-2 bg-purple-200 rounded-2xl opacity-20 p-10 '>
-              <p>
+            <div className=' relative skills col-span-2 shadow-3xl bg-purple-500 rounded-2xl p-10 '>
+              <h1 className=' align-middle text-center justify-center pb-5 font-extrabold text-2xl'>
+                My position
+              </h1>
+              <p className='text-center' >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam at possimus sed nostrum sequi dolorem voluptas! Enim, velit quod commodi id quis eaque nulla eius, tempora deleniti quae sapiente repellat error at illum vero repudiandae rerum modi, praesentium earum natus animi. Sapiente sint error voluptate enim dolores doloremque, alias blanditiis!
               </p>
 
+              </div>    
             </div>
           </div>
         </section>
 
-        <section className='skills col-span-5 flex h-screen items-center justify-center p-10 flex-col'>
+        <section className='skills col-span-5 flex h-screen items-center justify-center p-5 flex-col'>
           <div>
             <h1 className=' font-extrabold text-2xl'>
               As a positon <button> _Button_ </button>
             </h1>
           </div>
-          <div className=' p-10'>
+          <div className=' p-5'>
           <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.17/build/spline-viewer.js"></script>
             <spline-viewer loading-anim-type="spinner-small-light" url="https://prod.spline.design/J0o-TTFozYf6Y4JH/scene.splinecode">
 
@@ -86,34 +100,34 @@ import { Application } from '@splinetool/runtime';
           </div>
         </section>
         <section className='projects col-span-5 flex h-screen items-center  p-10 flex-col'>
-          <h1 className='p-10 text-3xl font-extrabold'>
+          <h1 className='p-10 text-3xl font-extrabold pb-10'>
             Works I have done
           </h1>
-          <div className=' grid grid-cols-5 gap-5'>
-            <div className=' col-span-3 bg-zinc-100 rounded-2xl'>
+          <div className=' grid grid-cols-5 gap-3'>
+            <div className=' col-span-3  p-5 bg-zinc-100 rounded-2xl'>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem optio, tempore pariatur autem magni laborum magnam suscipit necessitatibus unde impedit, minus vero. Nemo, excepturi dignissimos? At velit est ipsum.
               </p>
               
             </div>
-            <div className=' col-span-2 bg-green-400 rounded-2xl'>
+            <div className=' col-span-2 bg-green-200 p-5   rounded-2xl'>
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor maiores sit quae doloribus id consequatur molestias doloremque ducimus necessitatibus, a dolorum officiis laboriosam dolores rerum, reiciendis quo laborum error! Reprehenderit.
               </p>
             </div>
-            <div className=' col-span-1 bg-pink-200 rounded-2xl'>
+            <div className=' col-span-1  p-5 bg-pink-200 rounded-2xl'>
               <p>
                 ore placeat nam! Voluptate sit officia, dolor aspernatur excepturi fugiat maxime ex!
               </p>
             </div>
-            <div className='col-span-3 bg-purple-400 rounded-2xl'>
+            <div className='col-span-3  p-5 bg-purple-400 rounded-2xl'>
               <p>
                 Lorem ip Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae nihil dolorem quod esse accusamus vero ea quia explicabo molestiae.
               </p>
 
             </div>
-            <div className=' col-span-1 bg-pink-200 rounded-2xl'>
-              <p>
+            <div className=' col-span-1  p-5 font-black  bg-pink-200 rounded-2xl'>
+              <p className=' opacity-100 '>
                 aceat nam! Voluptate sit officia, dolor aspernatur excepturi fugiat maxime ex!
               </p>
             </div>
