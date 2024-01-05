@@ -3,27 +3,24 @@ import Image from 'next/image'
 import React, { createContext ,useState, useEffect } from 'react';
 import { Application } from '@splinetool/runtime';
 import {delay, motion, useAnimation, useInView } from 'framer-motion';
+import ImageSlider from '@/components/imagesliider';
+// import { SplineViewer } from '@splinetool/viewer';
+import work1 from '@/public/work1.jpg';
+import work2 from '@/public/work2.jpg';
+import work3 from '@/public/work3.jpg';
+import work4 from '@/public/work4.jpg';
+
+const images = [
+  '/work1.jpg',
+  '/work2.jpg',
+  '/work3.jpg',
+  '/work4.jpg',
+
+];
 
 
-// const ArrayDisplay: React.FC = () => {
-  //   const [array, setArray] = useState<string[]>(["element1", "element2", "element3"]);
-  //   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  
-  //   useEffect(() => {
-    //     // Use setInterval to change the displayed element every second
-    //     const intervalId = setInterval(() => {
-      //       setCurrentIndex(prevIndex => (prevIndex + 1) % array.length);
-      //     }, 1000);
-      
-      //     // Clean up the interval on component unmount
-      //     return () => clearInterval(intervalId);
-      //   }, [array]);
-      //   return (
-        //     <div>
-        //       Current Element: {array[currentIndex]}
-        //     </div>)
-        // }
-        
+
+
         export default function Home() {
           return (
             <main className="layout grid grid-flow-row grid-cols-5 ">
@@ -99,22 +96,41 @@ import {delay, motion, useAnimation, useInView } from 'framer-motion';
             </p>
           </div>
         </section>
+
+
         <section className='projects col-span-5 flex h-screen items-center  p-10 flex-col'>
           <h1 className='p-10 text-3xl font-extrabold pb-10'>
             Works I have done
           </h1>
           <div className=' grid grid-cols-5 gap-3'>
-            <div className=' col-span-3  p-5 bg-zinc-100 rounded-2xl'>
+            <div className=' col-span-3 bg-purple-600 bg-opacity-30 backdrop-blur drop-shadow-lg p-5 bg-transparent rounded-2xl'>
+              <h1 className=' font-extrabold text-2xl text-center pb-5'>
+                Card Project 
+              </h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem optio, tempore pariatur autem magni laborum magnam suscipit necessitatibus unde impedit, minus vero. Nemo, excepturi dignissimos? At velit est ipsum.
               </p>
-              
+              <div className=''>
+
+                <ImageSlider images={images} />
+              </div>
             </div>
-            <div className=' col-span-2 bg-green-200 p-5   rounded-2xl'>
+
+            {/* next */}
+            <div className=' col-span-2 flex flex-col space-y-5 rounded-2xl'>
+              <div className='bg-green-200 rounded-2xl'>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor maiores sit quae doloribus id consequatur molestias doloremque ducimus necessitatibus, a dolorum officiis laboriosam dolores rerum, reiciendis quo laborum error! Reprehenderit.
+                </p>
+              </div>
+              <div className='bg-red-200 rounded-2xl'>
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor maiores sit quae doloribus id consequatur molestias doloremque ducimus necessitatibus, a dolorum officiis laboriosam dolores rerum, reiciendis quo laborum error! Reprehenderit.
               </p>
+              </div>
+
             </div>
+             {/* next */}
             <div className=' col-span-1  p-5 bg-pink-200 rounded-2xl'>
               <p>
                 ore placeat nam! Voluptate sit officia, dolor aspernatur excepturi fugiat maxime ex!

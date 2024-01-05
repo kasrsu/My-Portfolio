@@ -27,7 +27,7 @@ body {
 
     background: linear-gradient(45deg,#7D0A0A, #5b3636,#40004d,#632a2a,#520000 );
     background-size: 300% 300%;
-    animation: linear-gradient 15s ease-in-out infinite;
+    animation: linear-gradient 10s ease-in-out infinite;
 }
 
 @keyframes linear-gradient{
@@ -40,4 +40,16 @@ body {
   100% {
     background-position: 0% 50%;
    }
+}
+
+.center-image {
+  height: 200px; /* Adjust this value as needed */
+}
+
+.side-image {
+  height: 100px; /* Adjust this value as needed */
+  padding-left: 30px;
+ 
+
+
 }
