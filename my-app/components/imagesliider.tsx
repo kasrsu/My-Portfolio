@@ -19,7 +19,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: '0',
+    centerPadding: '180',
     afterChange: (index: number) => setCurrentSlide(index),
   };
  
@@ -42,9 +42,7 @@ const slideIn = {
            variants={slideIn}
             src={imageUrl}
             alt={`Slide ${index + 1}`}
-            className={`max-w-full h-auto items-center justify-center pt-10
-             
-            }`}
+            className={`w-80 h-auto items-center justify-center pt-1}`}
           />
         </div>
       ))}
