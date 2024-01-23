@@ -1,10 +1,12 @@
 'use client';
 import Image from 'next/image'
 import React, { createContext ,useState, useEffect } from 'react';
-import { Application } from '@splinetool/runtime';
+import Spline from '@splinetool/react-spline';
 import {delay, motion, useAnimation, useInView } from 'framer-motion';
 import ImageSlider from '@/components/imagesliider';
 // import { SplineViewer } from '@splinetool/viewer';
+import ImageScroller from '@/components/imageScroller';
+
 import work1 from '@/public/work1.jpg';
 import work2 from '@/public/work2.jpg';
 import work3 from '@/public/work3.jpg';
@@ -85,9 +87,8 @@ const images = [
             </h1>
           </div>
           <div className=' p-5'>
-          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.17/build/spline-viewer.js"></script>
-            <spline-viewer loading-anim-type="spinner-small-light" url="https://prod.spline.design/J0o-TTFozYf6Y4JH/scene.splinecode">
-            </spline-viewer>
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.33/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/zwSHm568HU-BBn9s/scene.splinecode"></spline-viewer>
           </div>
           <div>
             <p>
@@ -109,15 +110,18 @@ const images = [
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem optio, tempore pariatur autem magni laborum magnam suscipit necessitatibus unde impedit, minus vero. Nemo, excepturi dignissimos? At velit est ipsum.
               </p>
-              <div className=''>
-                <ImageSlider images={images} />
-              </div>
+                <div className=' pt-10 pb-10'>
+                  <ImageScroller />
+                </div>
             </div>
 
             {/* next */}
             <div className=' col-span-2 flex flex-col space-y-5 rounded-2xl'>
-              <div className='bg-green-200 rounded-2xl h-1/2'>
-                <p>
+              <div className='bg-green-200 rounded-2xl h-1/2 items-center text-center p-5 justify-center'>
+                <h1 className=' text-3xl font-extrabold'>
+                  Duothan
+                </h1>
+                <p className=' text-black pt-5'>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor maiores sit quae doloribus id consequatur molestias doloremque ducimus necessitatibus, a dolorum officiis laboriosam dolores rerum, reiciendis quo laborum error! Reprehenderit.
                 </p>
               </div>
