@@ -92,7 +92,7 @@ const images = [
           </div>
           <div>
             <p>
-              lorem 50
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, consequatur unde itaque, sit maiores, eaque accusantium alias quos neque sequi obcaecati! Aliquid, harum? Quidem voluptates corporis aperiam possimus nihil aliquam dolor, aut quasi ratione inventore saepe placeat eligendi consequuntur eveniet unde modi officia facere minima quos porro, voluptatum ducimus quae.
             </p>
           </div>
         </section>
