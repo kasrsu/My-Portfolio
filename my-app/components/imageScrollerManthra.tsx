@@ -7,7 +7,7 @@ import work3 from '@/public/work3.jpg';
 import work4 from '@/public/work4.jpg';
 
 
-const ImageScroller = () => {
+const ImageScrollerManthra = () => {
   return (
     <div className=" bg-transparent">
       <div className="items-center justify-center">
@@ -27,7 +27,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(scrollYProgress, [1, 0], ["10%", "-25%"]);
 
   return (
     <section ref={targetRef} className="relative h-3/4">
@@ -54,7 +54,7 @@ const Card = ({ card }: { card: CardType }) => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="absolute inset-0 z-0 transition-transform duration-50 group-hover:scale-110"
+        className="absolute inset-0 z-0 transition-transform duration-150 group-hover:scale-10"
       ></div>
       <div className="absolute inset-0 z-10 grid place-content-center">
         <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
@@ -65,7 +65,7 @@ const Card = ({ card }: { card: CardType }) => {
   );
 };
 
-export default ImageScroller;
+export default ImageScrollerManthra;
 
 type CardType = {
   url: string;
@@ -105,8 +105,24 @@ const cards: CardType[] = [
     id: 6,
   },
   {
-    url: "/imgs/abstract/3.jpg",
+    url: "/public/work3.jpg",
     title: "Title 7",
     id: 7,
   },
+  {
+    url: "/public/work3.jpg",
+    title: "Title 8",
+    id: 8,
+  },
+  {
+    url: "/public/work3.jpg",
+    title: "Title 9",
+    id: 9,
+  },
+  {
+    url: "/public/work3.jpg",
+    title: "Title 10",
+    id: 10 ,
+  },
+
 ];

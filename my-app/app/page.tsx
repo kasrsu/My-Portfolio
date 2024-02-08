@@ -5,12 +5,16 @@ import Spline from '@splinetool/react-spline';
 import {delay, motion, useAnimation, useInView } from 'framer-motion';
 import ImageSlider from '@/components/imagesliider';
 // import { SplineViewer } from '@splinetool/viewer';
-import ImageScroller from '@/components/imageScroller';
+import ImageScroller from '@/components/imageScrollerCard';
+import PositionChanger from '@/components/dynamicPosition';
 
 import work1 from '@/public/work1.jpg';
 import work2 from '@/public/work2.jpg';
 import work3 from '@/public/work3.jpg';
 import work4 from '@/public/work4.jpg';
+import ImageScrollerDuothan from '@/components/imageScrollerDuothan';
+import ImageScrollerManthra from '@/components/imageScrollerManthra';
+import DynamicTextAnimations from '@/components/dynamicTextAnimation';
 
 const images = [
   '/work1.jpg',
@@ -40,9 +44,8 @@ const images = [
              className=' text-4xl text-red-200 col-span-2 font-bold '>
               I'm Anusara Sri Ravindih
             </motion.h1>
-            <h1 className=' text-7xl  opacity-90 font-black'>
-            Graphic Designer
-            </h1>
+            
+            <PositionChanger/>    
             <p className=' text-xl pt-10'>
               I'm a graphic designer based in Bangkok, Thailand. I have a passion for creating clean, modern identities, stylish & beautiful websites, and eye-catching print design.
             </p>
@@ -53,9 +56,9 @@ const images = [
         </section>
 
         <section className='col-span-5 p-10 gap-5 flex h-screen'>
-          <div className=' relative grid grid-cols-5 gap-3 h-1/2'>
+          <div className=' relative grid grid-cols-5 gap-4 h-1/2'>
           <div className='my_details col-span-2 '>
-            <div className=' bg-pink-800 rounded-2xl relative h-full '>
+            <div className=' shadow-2xl bg-opacity-30 bg-red-400 rounded-2xl relative h-full '>
               <h1 className=' text-center text-4xl font-extrabold p-10 text-white'>
                 About Me
               </h1>
@@ -67,12 +70,12 @@ const images = [
           </div>
           <div className='positions col-span-3 h-full relative '>
 
-            <div className=' relative skills col-span-2 shadow-3xl bg-purple-500 rounded-2xl p-10 h-full'>
+            <div className='shadow-2xl bg-opacity-40 relative skills col-span-2 shadow-3xl bg-purple-400 rounded-2xl p-10 h-full'>
               <h1 className=' align-middle text-center justify-center pb-5 font-extrabold text-2xl'>
                 My position
               </h1>
               <p className='text-center' >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam at possimus sed nostrum sequi dolorem voluptas! Enim, velit quod commodi id quis eaque nulla eius, tempora deleniti quae sapiente repellat error at illum vero repudiandae rerum modi, praesentium earum natus animi. Sapiente sint error voluptate enim dolores doloremque, alias blanditiis!
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, accusantium ullam perferendis reprehenderit blanditiis esse nulla temporibus adipisci ipsum quia repudiandae odio. Magni, debitis veniam dicta quisquam accusamus aut dolore! Nihil dolores ex provident aut incidunt ipsam quibusdam, debitis autem, libero nisi soluta, dolore blanditiis. Quod facere sit et quas! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam at possimus sed nostrum sequi dolorem voluptas! Enim, velit quod commodi id quis eaque nulla eius, tempora deleniti quae sapiente repellat error at illum vero repudiandae rerum modi, praesentium earum natus animi. Sapiente sint error voluptate enim dolores doloremque, alias blanditiis!
               </p>
 
               </div>    
@@ -87,8 +90,8 @@ const images = [
             </h1>
           </div>
           <div className=' p-5'>
-            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.33/build/spline-viewer.js"></script>
-            <spline-viewer url="https://prod.spline.design/zwSHm568HU-BBn9s/scene.splinecode"></spline-viewer>
+              <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.38/build/spline-viewer.js"></script>
+              <spline-viewer loading-anim-type="none" url="https://prod.spline.design/J0o-TTFozYf6Y4JH/scene.splinecode"></spline-viewer>
           </div>
           <div>
             <p>
@@ -98,54 +101,91 @@ const images = [
         </section>
 
 
-        <section className='projects col-span-5 flex h-screen items-center  p-10 flex-col'>
-          <h1 className='p-10 text-3xl font-extrabold pb-10'>
-            Works I have done
+        <section className='projects col-span-5 flex h-screen items-center gap-10 pt-40 p-10 flex-col'>
+          <h1 className='p-10 text-3xl font-extrabold pb-15'>
+            Works I have done As a Graphic Desginer
           </h1>
           <div className=' grid grid-cols-5 gap-3 '>
-            <div className=' col-span-3 bg-purple-600 backdrop-blur drop-shadow-lg p-5 rounded-2xl'>
-              <h1 className=' font-extrabold text-2xl text-center pb-5'>
-                Card Project 
-              </h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem optio, tempore pariatur autem magni laborum magnam suscipit necessitatibus unde impedit, minus vero. Nemo, excepturi dignissimos? At velit est ipsum.
-              </p>
+            <div className=' grid grid-cols-3  col-span-3 gap-3 '>
+              <div className='card_project col-span-3 bg-orange-400 shadow-2xl rounded-2xl p-5 bg-opacity-40'>
+                <h1 className=' font-extrabold text-2xl text-center pb-5'>
+                  Card Project 
+                </h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem optio, tempore pariatur autem magni laborum magnam suscipit necessitatibus unde impedit, minus vero. Nemo, excepturi dignissimos? At velit est ipsum.
+                </p>
                 <div className=' pt-10 pb-10'>
-                  <ImageScroller />
+                    <ImageScroller />
                 </div>
+              </div>
+              <div className='items-center text-center p-5 justify-center shadow-2xl rounded-2xl p-5 bg-opacity-40 bg-lime-400 '>
+                <h1 className=' font-bold text-2xl '>
+                  Text Book
+                </h1>
+              </div>
+              <div className=' items-center text-center p-5 justify-center shadow-2xl rounded-2xl p-5 bg-opacity-40 bg-purple-800'>
+                <h1 className='font-bold text-2xl' >
+                  packaging
+                </h1>
+                <p>
+                  
+                </p>
+              </div>
+              <div className=' items-center text-center p-5 justify-center  shadow-2xl rounded-2xl p-5 bg-opacity-40 bg-yellow-200'>
+                <h1 className='font-bold text-2xl'>
+                  sedssl
+                </h1>
+              </div>
             </div>
 
             {/* next */}
-            <div className=' col-span-2 flex flex-col space-y-5 rounded-2xl'>
-              <div className='bg-green-200 rounded-2xl h-1/2 items-center text-center p-5 justify-center'>
-                <h1 className=' text-3xl font-extrabold'>
+            <div className=' col-span-2 flex flex-col space-y-3 rounded-2xl'>
+              <div className='bg-opacity-20 shadow-2xl bg-green-200 rounded-2xl h-auto items-center text-center p-5 justify-center  '>
+                <h1 className=' text-3xl font-extrabold pb-5'>
                   Duothan
                 </h1>
-                <p className=' text-black pt-5'>
+                <ImageScrollerDuothan/>
+                <p className=' text-white pt-5'>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor maiores sit quae doloribus id consequatur molestias doloremque ducimus necessitatibus, a dolorum officiis laboriosam dolores rerum, reiciendis quo laborum error! Reprehenderit.
                 </p>
+
               </div>
-              <div className='bg-red-200 rounded-2xl h-1/2'>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor maiores sit quae doloribus id consequatur molestias doloremque ducimus necessitatibus, a dolorum officiis laboriosam dolores rerum, reiciendis quo laborum error! Reprehenderit.
-              </p>
+              <div className='bg-yellow-500 bg-opacity-30 p-10 rounded-2xl h-auto shadow-2xl'>
+                <h1 className=' font-bold text-center text-2xl  '>
+                  Manthra 
+                </h1>
+                <div className='p-5'>
+                 <ImageScrollerManthra/>
+                </div>
+                <p className=''>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor maiores sit quae doloribus id consequatur molestias doloremque ducimus necessitatibus, a dolorum officiis laboriosam dolores rerum, reiciendis quo laborum error! Reprehenderit.
+                </p>
               </div>
 
             </div>
              {/* next */}
-            <div className=' col-span-1  p-5 bg-pink-200 rounded-2xl'>
+            <div className=' col-span-1 shadow-4xl bg-opacity-40 p-5 bg-pink-200 rounded-2xl'>
+                <h1 className=' font-bold text-center text-2xl pb-5'>
+                  Text Book Designs 
+                </h1>
               <p>
                 ore placeat nam! Voluptate sit officia, dolor aspernatur excepturi fugiat maxime ex!
               </p>
             </div>
-            <div className='col-span-3  p-5 bg-purple-400 rounded-2xl'>
+            <div className='col-span-3 shadow-2xl p-5 bg-opacity-40 bg-blue-400 rounded-2xl'>
+              <h1 className=' font-bold text-center text-2xl pb-5'>
+              Packing And Labeling 
+              </h1>
               <p>
                 Lorem ip Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae nihil dolorem quod esse accusamus vero ea quia explicabo molestiae.
               </p>
 
             </div>
-            <div className=' col-span-1  p-5 font-black  bg-pink-200 rounded-2xl'>
-              <p className=' opacity-100 '>
+            <div className=' col-span-1  p-5  bg-opacity-30 shadow-2xl bg-pink-200 rounded-2xl'>
+              <h1 className=' font-bold text-center text-2xl pb-5'>
+                  SEDS SL 
+              </h1>
+              <p className=''>
                 aceat nam! Voluptate sit officia, dolor aspernatur excepturi fugiat maxime ex!
               </p>
             </div>
